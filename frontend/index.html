@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact Project Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Impact Project Tracker</h1>
+            <p>Track and manage your impact projects with JSON-LD support</p>
+        </header>
+
+        <main>
+            <!-- Project Submission Form -->
+            <section class="form-section">
+                <h2>Submit New Project</h2>
+                <form id="projectForm">
+                    <div class="form-group">
+                        <label for="projectName">Project Name:</label>
+                        <input 
+                            type="text" 
+                            id="projectName" 
+                            name="projectName" 
+                            required 
+                            placeholder="Enter project name"
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="status">Status:</label>
+                        <select id="status" name="status" required>
+                            <option value="">Select status</option>
+                            <option value="Planned">Planned</option>
+                            <option value="Ongoing">Ongoing</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" id="submitBtn">Submit Project</button>
+                </form>
+            </section>
+
+            <!-- Message Area -->
+            <section class="message-section">
+                <div id="messageArea" class="message hidden"></div>
+            </section>
+
+            <!-- Project Display Area -->
+            <section class="projects-section">
+                <div class="projects-header">
+                    <h2>Project List</h2>
+                    <button id="loadProjectsBtn">Load Projects</button>
+                </div>
+                
+                <div id="projectsContainer">
+                    <div id="loadingIndicator" class="loading hidden">Loading projects...</div>
+                    <div id="projectsList" class="projects-list"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
